@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbearia Web - Quem Somos</title>
+    <link rel="stylesheet" href="quemSomos.css">
+    <link rel="icon" href="/img/logoBarber.png" type="image/x-icon">
+</head>
+<body>
+    <div class="cabeçalho">
+        <p class="txtCabeçalho">Ligue pra nós: +55 (99) 9 9999-9999</p>
+        <div class="cabeçalhoMidias">
+            <img src="/img/instagram.svg" alt="instagram" class="iconeInstagram">
+            <img src="/img/facebook.svg" alt="facebook" class="iconeFacebook">
+            <img src="/img/whatsapp.png" alt="whatsapp" class="iconeWhatsapp">
+        </div>
+    </div>
+    
+    <div class="navegaçao">
+        <a href="/inicio/index.html" class="inicio">INÍCIO</a>
+        <a href="/Agendamento/index.html" class="agendar">AGENDAR</a>
+        <a href="/Produtos/index.html" class="produtos">PRODUTOS</a>
+        <a href="/QuemSomos/index.html" class="serviços" onclick="recarregarPagina()">QUEM SOMOS</a>
+        <a href="/Localização/index.html" class="localizacao">LOCALIZAÇÃO</a>
+    </div>
+
+    <div class="container">
+        <div id="quemSomosTxt">
+            <h1 id="TituloQuemSomos">Quem Somos?</h1>
+            <p>Esse espaço aqui, você pode registrar momentos, histórias da sua barbearia e muito mais. Conte como tudo começou, as dificuldades e conquistas que moldaram o que somos hoje. Compartilhe anedotas dos clientes fiéis e as novas amizades que surgem a cada dia.</p>
+            <p>Celebre as tradições que mantemos vivas, as inovações que adotamos e a dedicação que colocamos em cada serviço. Destaque os eventos que organizamos, as colaborações com negócios locais e o impacto positivo que buscamos causar.</p>
+            <p>Ao registrar esses momentos e histórias, você ajuda a construir um legado que será lembrado por todos que fizerem parte da nossa jornada.</p>
+        </div>
+    
+        <div id="equipe" class="equipe-imagem">
+            <img src="/img/fundoQuemSomos.jpg" alt="fundoQuemSomos" id="fundoQuemSomos">
+            <h1 id="tituloEquipe">Nossa Equipe</h1>
+            <div class="row">
+                <div class="col">
+                    <div class="image-container">
+                        <img src="/img/Equipe1" alt="imgEquipe1" class="ImagemEquipe">
+                        <button class="open-modal" data-modal="modalPessoa1">SOBRE PESSOA 1</button>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="image-container">
+                        <img src="/img/Equipe2" alt="imgEquipe2">
+                        <button class="open-modal" data-modal="modalPessoa2">SOBRE PESSOA 2</button>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="image-container">
+                        <img src="/img/Equipe3" alt="imgEquipe3">
+                        <button class="open-modal" data-modal="modalPessoa3">SOBRE PESSOA 3</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!-- Modais -->
+    <div id="modalPessoa1" class="modal">
+        <div class="modal-content">
+            <span class="close" data-modal="modalPessoa1">&times;</span>
+            <img src="/img/Equipe1" alt="imgequipeModal1" class="modal-image">
+            <div id="modal1" class="modal-text">
+                <p id="nomeModal1">Nome: Registre seu nome aqui!</p>
+                <p id="habilidadeModal1">HABILIDADE: Registre sua habilidade aqui!</p>
+                <p id="caracteristicaModal1">CARACTERÍSTICA: Registre suas características!</p>
+            </div>
+        </div>
+    </div>
+    
+    <div id="modalPessoa2" class="modal">
+        <div class="modal-content">
+            <span class="close" data-modal="modalPessoa2">&times;</span>
+            <img src="/img/Equipe2" alt="imgequipeModal2" class="modal-image">
+            <div id="modal2" class="modal-text">
+                <p id="nomeModal2">Nome: Registre seu nome aqui!</p>
+                <p id="habilidadeModal2">HABILIDADE: Registre sua habilidade aqui!</p>
+                <p id="caracteristicaModal2">CARACTERÍSTICA: Registre suas características!</p>
+            </div>
+        </div>
+    </div>
+    
+    <div id="modalPessoa3" class="modal">
+        <div class="modal-content">
+            <span class="close" data-modal="modalPessoa3">&times;</span>
+            <img src="/img/Equipe3" alt="imgequipeModal3" class="modal-image">
+            <div id="modal3" class="modal-text">
+                <p id="nomeModal3">Nome: Registre seu nome aqui!</p>
+                <p id="habilidadeModal3">HABILIDADE: Registre sua habilidade aqui!</p>
+                <p id="caracteristicaModal3">CARACTERÍSTICA: Registre suas características!</p>
+            </div>
+        </div>
+    </div>
+    <script src="quemSomos.js"></script>
+</body>
+</html>

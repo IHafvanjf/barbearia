@@ -1,0 +1,151 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: rgb(52, 52, 52);
+    overflow-x: hidden;
+}
+
+.cabeçalho {
+    background-color: rgb(161, 39, 65);
+    position: absolute;
+    display: flex;
+    height: 5vh;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2%;
+    top: 0;
+}
+
+#fundoAgenda {
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+    height: 100%;
+}
+
+.cabeçalhoMidias {
+    display: flex;
+    gap: 5px; /* Espaçamento entre os ícones */
+    margin-left: auto; /* Empurra os ícones para a direita */
+}
+
+.iconeInstagram,
+.iconeFacebook {
+    width: 25px;
+    cursor: pointer;
+}
+
+.iconeWhatsapp {
+    width: 8vh;
+    cursor: pointer;
+    height: 5vh;
+    margin-left: -15%;
+}
+
+.txtCabeçalho {
+    color: white;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    flex: 1;
+}
+
+.navegaçao {
+    background-color: rgb(34, 34, 70);
+    height: auto; 
+    width: 100%;
+    display: flex;
+    flex-direction: row; 
+    flex-wrap: nowrap; 
+    justify-content: space-evenly; /* Altere para space-between para mais espaçamento */
+    padding: 30px 0; 
+    position: relative;
+    top: 5vh;
+    margin-bottom: 30px;
+}
+
+.navegaçao a {
+    text-decoration: none;
+    color: rgb(253, 253, 253);
+    font-size: 1.2vw; /* Tamanho da fonte baseado na largura da viewport */
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
+    margin: 0 10px; /* Aumente o valor para aumentar a distância */
+    flex: 0 1 auto;
+    white-space: nowrap;
+}
+
+#tituloEquipe{
+    margin-bottom: 20px;
+}
+
+.banner {
+    margin-top: 30px;
+    position: relative;
+}
+
+.modal {
+    z-index: 1050; /* ou outro valor maior */
+}
+
+#fundoEquipe {
+    width: 100%;
+    height: auto;
+}
+
+#agendarBtn {
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.carousel-item img {
+    max-height: 500px; /* Ajuste a altura do carrossel */
+}
+
+#tituloProdutos {
+    margin: 20px 0;
+    font-size: 24px;
+}
+
+#produtos .col-md-3 {
+    margin-bottom: 20px;
+}
+
+footer {
+    background-color: rgb(161, 39, 65);
+    color: white;
+}
+
+@media (max-width: 390px) {
+    .txtCabeçalho {
+        font-size: 2vh;
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .iconeInstagram,
+    .iconeFacebook {
+        width: 3vh;
+        cursor: pointer;
+        margin-left:-0.1vh; /* Move os ícones para a direita */
+    }
+
+    .iconeWhatsapp {
+        width: 8vh;
+        cursor: pointer;
+        height: 4vh;
+    }
+
+}
+
+@media (max-width: 590px) {
+    .navegaçao a{
+        font-size: 8pt;
+    }
+}
+@media (max-width: 390px) {
+    .navegaçao a{
+        font-size: 6pt;
+    }
+}

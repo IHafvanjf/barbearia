@@ -1,0 +1,508 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #292828;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: rgb(47, 47, 47);
+}
+
+.cabeçalho {
+    background-color: rgb(161, 39, 65);
+    position: absolute;
+    display: flex;
+    height: 5vh;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2%;
+    top: 0;
+}
+
+#fundoAgenda {
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+    height: 100%;
+}
+
+.cabeçalhoMidias {
+    display: flex;
+    gap: 5px; /* Espaçamento entre os ícones */
+    margin-left: auto; /* Empurra os ícones para a direita */
+}
+
+.iconeInstagram,
+.iconeFacebook {
+    width: 25px;
+    cursor: pointer;
+}
+
+.iconeWhatsapp {
+    width: 8vh;
+    cursor: pointer;
+    height: 5vh;
+    margin-left: -15%;
+}
+
+.txtCabeçalho {
+    color: white;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    flex: 1;
+}
+
+.navegaçao {
+    background-color: rgb(34, 34, 70);
+    height: auto; 
+    width: 100%;
+    display: flex;
+    flex-direction: row; 
+    flex-wrap: nowrap; 
+    justify-content: space-evenly; /* Altere para space-between para mais espaçamento */
+    padding: 30px 0; 
+    position: absolute;
+    top: 5vh;
+}
+
+.navegaçao a {
+    text-decoration: none;
+    color: rgb(253, 253, 253);
+    font-size: 1.2vw; /* Tamanho da fonte baseado na largura da viewport */
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
+    margin: 0 10px; /* Aumente o valor para aumentar a distância */
+    flex: 0 1 auto;
+    white-space: nowrap;
+}
+
+#calendar-container {
+    top: 7vh;
+    width: 80%;
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    display: block;
+    z-index: 10;
+}
+
+.disabled {
+    color: #aaa;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+#calendarTitle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+#calendarTitle button {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    color: #007bff;
+}
+
+#calendarTitle button:hover {
+    color: #0056b3;
+}
+
+#prevMonth {
+    position: absolute;
+    left: 0;
+}
+
+#nextMonth {
+    position: absolute;
+    right: 0;
+}
+
+#calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+}
+
+.day-header {
+    display: contents;
+    font-weight: bold;
+    color: #555;
+    text-align: center;
+    background: #f0f0f0;
+    padding: 10px 0;
+    border-bottom: 2px solid #ddd;
+}
+
+.day {
+    width: 100%;
+    padding: 15px 0;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: #fff;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.day:hover {
+    background: #f9f9f9;
+    transform: scale(1.05);
+}
+
+.day.booked {
+    background: #f8d7da;
+    color: #721c24;
+    cursor: not-allowed;
+}
+
+.day.past-day {
+    background: #e9ecef;
+    color: #6c757d;
+    cursor: not-allowed;
+}
+
+.day.current-day {
+    background: #d1ecf1;
+    color: #0c5460;
+    font-weight: bold;
+}
+
+#timeSlots, #appointmentModal, #confirmationModal, #deleteConfirmationModal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 400px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    z-index: 10;
+}
+
+#appointmentModal {
+    height: 50vh;
+}
+
+#titulohorarios {
+    left: 12vh;
+    position: relative;
+}
+
+#slotsList {
+    cursor: pointer;
+}
+
+#tituloagendarhorarios {
+    left: 15vh;
+    position: relative;
+}
+
+.modal-content {
+    position: relative;
+}
+
+/* Estilo geral da modal */
+.modal-content {
+    padding: 20px;
+    position: relative;
+    width: 350px; /* Largura fixa para garantir alinhamento */
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo do Título */
+.modal-title {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2.8vh;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Campos de texto */
+input[type="text"] {
+    width: calc(100% - 20px); /* Calculado para evitar ultrapassar a borda */
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 2vh;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Garante que o padding não quebre o layout */
+}
+
+/* Estilo dos textos dos serviços */
+#txtServicosoferecidos {
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2.6vh;
+    text-align: center;
+    margin: 15px 0;
+}
+
+/* Alinhamento das opções de serviço */
+.service-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.service-container label {
+    flex: 1;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2.4vh;
+    font-weight: bold;
+    text-align: left;
+}
+
+.service-checkbox {
+    transform: scale(1.4); /* Aumenta o tamanho dos checkboxes */
+    margin-right: 10px;
+}
+
+/* Botão de agendar */
+#agendarBtn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 2.4vh;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+#agendarBtn:hover {
+    background-color: darkgreen;
+}
+
+#agendarBtn:hover {
+    background-color: darkgreen;
+}
+
+
+#agendarBtn:hover {
+    background-color: darkgreen;
+}
+
+
+
+#okConfirmation {
+    background: #4CAF50;
+    color: white;
+}
+
+
+
+#okConfirmation:hover {
+    background: #45A049;
+}
+
+#confirmDelete {
+    background: #f44336;
+    color: white;
+}
+
+#confirmDelete:hover {
+    background: #d32f2f;
+}
+
+#cancelDelete {
+    background: #ddd;
+    color: black;
+}
+
+#cancelDelete:hover {
+    background: #ccc;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+#appointmentForm {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#appointmentForm div {
+    margin-bottom: 10px;
+}
+
+#appointmentForm label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+#appointmentForm input,
+#appointmentForm select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.available-label {
+    color: green;
+}
+
+.booked-label {
+    color: red;
+}
+
+/* Estilização atualizada para o modal de horários disponíveis */
+#timeSlots {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 400px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    z-index: 10;
+    border: 2px solid #fdfdfd; /* Borda azul */
+}
+
+#timeSlots h2 {
+    text-align: center;
+    color: #000000; /* Azul */
+    margin-bottom: 20px;
+}
+
+#slotsList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#slotsList li {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+#slotsList li:hover {
+    background: #f9f9f9;
+    transform: scale(1.05);
+}
+
+#slotsList li.booked {
+    background: #f8d7da;
+    color: #721c24;
+    cursor: not-allowed;
+}
+
+#slotsList li.available {
+    background: #d4edda;
+    color: #155724;
+    cursor: pointer;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.modal-header,
+.modal-footer {
+    padding: 10px;
+    background: #fdfdfd;
+    border-bottom: 1px solid #ddd;
+}
+
+.modal-footer {
+    border-top: none;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.modal-footer button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.modal-footer button:hover {
+    background: #ddd;
+}
+
+#timeSlots .modal-content {
+    position: relative;
+}
+
+@media (max-width: 390px) {
+    .txtCabeçalho {
+        font-size: 2vh;
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .iconeInstagram,
+    .iconeFacebook {
+        width: 3vh;
+        cursor: pointer;
+        margin-left:-0.1vh; /* Move os ícones para a direita */
+    }
+
+    .iconeWhatsapp {
+        width: 8vh;
+        cursor: pointer;
+        height: 4vh;
+    }
+
+}
+
+@media (max-width: 590px) {
+    .navegaçao a{
+        font-size: 8pt;
+    }
+}
+@media (max-width: 390px) {
+    .navegaçao a{
+        font-size: 6pt;
+    }
+}

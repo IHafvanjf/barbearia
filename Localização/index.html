@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Localização - Barbearia</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+
+    <div class="cabeçalho">
+        <p class="txtCabeçalho">Ligue pra nós: +55 (99) 9 9999-9999</p>
+        <div class="cabeçalhoMidias">
+            <img src="/img/instagram.svg" alt="instagram" class="iconeInstagram">
+            <img src="/img/facebook.svg" alt="facebook" class="iconeFacebook">
+            <img src="/img/whatsapp.png" alt="whatsapp" class="iconeWhatsapp">
+        </div>
+    </div>
+
+    <div class="navegaçao">
+        <a href="/inicio/index.html" class="inicio">INÍCIO</a>
+        <a href="/Agendamento/index.html" class="agendar">AGENDAR</a>
+        <a href="/Produtos/index.html" class="produtos">PRODUTOS</a>
+        <a href="/QuemSomos/index.html" class="serviços">QUEM SOMOS</a>
+        <a href="/Localização/index.html" class="localizacao" onclick="recarregarPagina()">LOCALIZAÇÃO</a>
+    </div>
+
+    <div class="container">
+        <h1>Nossa Localização</h1>
+        <p>Encontre-nos no endereço abaixo:</p>
+        
+        <!-- Mapa -->
+        <div id="map"></div>
+
+        <!-- Endereço -->
+        <p><strong>Endereço:</strong> Av. Exemplo, 123, Centro - Cidade, Estado, Brasil</p>
+        <p><strong>Horário de Funcionamento:</strong> Segunda a Sexta, das 9h às 18h</p>
+    </div>
+
+    <!-- API do Google Maps com sua chave -->
+    <div class="map-container">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.123456789123!2d-122.41941568467842!3d37.77492927975828!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085815823456789%3A0x1a2b3c4d5e6f7g8h!2sYour%20Business%20Name!5e0!3m2!1sen!2sus!4v1234567890123" 
+            width="600" 
+            height="450" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy"></iframe>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,155 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: rgb(52, 52, 52);
+}
+
+.cabeçalho {
+    background-color: rgb(161, 39, 65);
+    display: flex;
+    height: 5vh;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.cabeçalhoMidias {
+    display: flex;
+    gap: 5px; /* Espaçamento entre os ícones */
+    margin-left: auto; /* Empurra os ícones para a direita */
+}
+
+.iconeInstagram,
+.iconeFacebook {
+    width: 25px;
+    cursor: pointer;
+}
+
+.iconeWhatsapp {
+    width: 8vh;
+    cursor: pointer;
+    height: 5vh;
+    margin-left: -15%;
+}
+
+.txtCabeçalho {
+    color: white;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    flex: 1;
+}
+
+.navegaçao {
+    background-color: rgb(34, 34, 70);
+    display: flex;
+    justify-content: space-evenly;
+    padding: 30px 0;
+    margin-bottom: 50px;
+}
+
+.navegaçao a {
+    text-decoration: none;
+    color: rgb(253, 253, 253);
+    font-size: 1.2vw;
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
+}
+
+#TituloProdutos {
+    text-align: center;
+    font-size: 30pt;
+    margin-top: 20px;
+    color: white;
+}
+
+.container-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    margin: 10px;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-img-top {
+    object-fit: contain;
+    max-width: 100%;
+    height: 180px; /* Altura ajustada para manter consistência */
+}
+
+.card-body {
+    padding: 10px;
+}
+
+.card-title {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.card-text {
+    font-size: 1em;
+    margin-bottom: 10px;
+}
+
+.botões {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn {
+    flex: 1;
+    margin: 5px;
+}
+
+@media (max-width: 390px) {
+    .txtCabeçalho {
+        font-size: 2vh;
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .iconeInstagram,
+    .iconeFacebook {
+        width: 3vh;
+        cursor: pointer;
+        margin-left:-0.1vh; /* Move os ícones para a direita */
+    }
+
+    .iconeWhatsapp {
+        width: 8vh;
+        cursor: pointer;
+        height: 4vh;
+    }
+
+}
+
+@media (max-width: 590px) {
+    .navegaçao a{
+        font-size: 8pt;
+    }
+}
+@media (max-width: 390px) {
+    .navegaçao a{
+        font-size: 6pt;
+    }
+}

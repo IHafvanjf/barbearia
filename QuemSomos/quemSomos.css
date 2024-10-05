@@ -1,0 +1,355 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: rgb(52, 52, 52);
+    overflow-x: hidden;
+}
+
+.cabeçalho {
+    background-color: rgb(161, 39, 65);
+    position: relative;
+    display: flex;
+    height: 5vh;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2%;
+    top: 0;
+    margin: 0; /* Remova a margem lateral */
+}
+.cabeçalhoMidias {
+    display: flex;
+    gap: 5px;
+    margin-left: auto;
+}
+
+.cabeçalhoMidias {
+    display: flex;
+    gap: 5px; /* Espaçamento entre os ícones */
+    margin-left: auto; /* Empurra os ícones para a direita */
+}
+
+.iconeInstagram,
+.iconeFacebook {
+    width: 25px;
+    cursor: pointer;
+}
+
+.iconeWhatsapp {
+    width: 8vh;
+    cursor: pointer;
+    height: 5vh;
+    margin-left: -15%;
+}
+
+.txtCabeçalho {
+    color: white;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    flex: 1;
+    margin-top: 0;
+}
+.navegaçao {
+    background-color: rgb(34, 34, 70);
+    height: auto; 
+    width: 100%;
+    display: flex;
+    flex-direction: row; 
+    flex-wrap: nowrap; 
+    justify-content: space-evenly; /* Você pode usar space-between se preferir mais espaçamento */
+    padding: 30px 0; /* Ajuste o padding para manter os espaços internos */
+    position: relative;
+    margin: 0; /* Remove a margem para que ocupe toda a largura */
+}
+
+
+.navegaçao a {
+    text-decoration: none;
+    color: rgb(253, 253, 253);
+    font-size: 1.2vw; /* Tamanho da fonte baseado na largura da viewport */
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
+    margin: 0 10px; /* Aumente o valor para aumentar a distância */
+    flex: 0 1 auto;
+    white-space: nowrap;
+}
+
+.container {
+    display: flex; /* Usando Flexbox para alinhar lado a lado */
+    flex-wrap: wrap; /* Permite que as seções se ajustem em telas menores */
+}
+
+#quemSomosTxt {
+    flex: 1 1 50%; /* Ocupa metade da largura disponível */
+    padding: 50px;
+    color: white;
+    position: relative;
+    z-index: 2;
+}
+
+#quemSomosTxt p {
+    margin-bottom: 20px; /* Espaçamento entre os parágrafos */
+    line-height: 1.6; /* Aumenta o espaço entre as linhas para melhor legibilidade */
+}
+
+#TituloQuemSomos {
+    text-align: center;
+    font-size: 2.5em; /* Aumenta o tamanho do título */
+    margin-bottom: 20px; /* Espaço abaixo do título */
+    color: rgb(245, 241, 242); /* Muda a cor do título para destacar */
+}
+
+
+#tituloEquipe {
+    text-align: center; /* Centraliza o texto */
+    color: white; /* Cor do texto */
+    margin: 20px 0; /* Espaçamento acima e abaixo do título */
+    position: relative; /* Para garantir que o título esteja na ordem correta */
+    z-index: 3; /* Para que fique acima da imagem de fundo */
+}
+
+#equipe {
+    flex: 1 1 50%; /* Ocupa metade da largura disponível */
+    text-align: center;
+    padding: 20px;
+    background-color: transparent;
+    color: white;
+    position: relative;
+    z-index: 5;
+
+}
+
+.equipe-imagem {
+    background-image: url('/img/fundoEquipe.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    padding: 20px;
+    position: absolute; /* Alterado para absolute */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1; /* Z-index para ficar atrás do conteúdo */
+}
+
+#fundoQuemSomos {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; 
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    z-index: 10; 
+ 
+
+}
+
+.col {
+    flex: 1 1 300px; 
+    margin: 10px;
+    z-index: 10; 
+
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    z-index: 10; 
+    max-height: 90%;
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    max-width: 150px; /* Ajuste conforme necessário */
+    margin-top: -10vh;
+    
+}
+
+.image-container img {
+    width: 90%; /* Imagem ocupa 100% da largura do contêiner */
+    height: auto; /* Mantém a proporção da imagem */
+    padding: 50%;
+}
+
+.open-modal {
+    position: absolute; /* Para posicionar o botão sobre a imagem */
+    top: 85%; /* Centraliza verticalmente */
+    left: 97%; /* Centraliza horizontalmente */
+    transform: translate(-50%, -50%); /* Ajusta a posição para realmente centralizar */
+    background-color: rgb(34, 34, 70);
+    color: white;
+    border: solid white 2px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 1vh;
+    cursor: pointer;
+    z-index: 10; /* Garante que o botão esteja acima da imagem */
+    white-space: nowrap;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0vh;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 322;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: -20px;
+    border: 1px solid #888;
+    border-radius: 20px;
+    width: 80%; /* Largura reduzida para responsividade */
+    max-width: 400px; /* Largura máxima */
+    z-index: 3;
+    display: flex;
+    flex-direction: column; /* Coluna para imagem e texto */
+    align-items: center; /* Centraliza o conteúdo */
+
+}
+
+.modal-image {
+    position: relative;
+    width: 20%; /* Imagem ocupa 100% da largura do modal */
+    height: auto; /* Mantém a proporção da imagem */
+    border-radius: 10px; /* Arredonda os cantos da imagem */
+    padding-top: -50%;
+}
+
+.modal-text {
+    margin-top: 20px; /* Espaço entre a imagem e o texto */
+    text-align: center; /* Centraliza o texto */
+    color: black; /* Cor do texto */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    z-index: 3;
+    display: flex;
+    align-self: flex-end;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+    z-index: 3;
+}
+
+@media (max-width: 365px){
+
+    .txtCabeçalho {
+        font-size: 2vh;
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .iconeInstagram,
+    .iconeFacebook {
+        width: 3vh;
+        cursor: pointer;
+        margin-left:-0.1vh; /* Move os ícones para a direita */
+    }
+
+    .iconeWhatsapp {
+        width: 8vh;
+        cursor: pointer;
+        height: 4vh;
+    }
+
+}
+
+@media (max-width: 679px) {
+    .navegaçao a{
+        font-size: 8pt;
+    }
+
+    .image-container img{
+        margin-top: 5vh;        
+    }
+}
+
+@media (max-width: 590px) {
+    .navegaçao a{
+        font-size: 8pt;
+    }
+
+    .image-container img{
+        margin-top: 5vh;        
+    }
+}
+@media (max-width: 399px) {
+    .navegaçao a{
+        font-size: 6pt;
+    }
+
+    .image-container img{
+        margin-top: 5vh;        
+    }
+}
+@media (max-width: 390px) {
+    .image-container img{
+        margin-top: 5vh;        
+    }
+}
+
+@media (max-width: 999px){
+    .open-modal{
+    position: absolute; /* Para posicionar o botão sobre a imagem */
+    top: 72%; /* Centraliza verticalmente */
+    left: 97%; /* Centraliza horizontalmente */
+    transform: translate(-50%, -50%); /* Ajusta a posição para realmente centralizar */
+    background-color: rgb(34, 34, 70);
+    color: white;
+    border: solid white 2px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 1vh;
+    cursor: pointer;
+    z-index: 10; /* Garante que o botão esteja acima da imagem */
+    white-space: nowrap;
+
+    
+}
+
+
+
+.image-container img {
+    position: relative;
+    width: 90%; /* Imagem ocupa 100% da largura do contêiner */
+    height: auto; /* Mantém a proporção da imagem */
+    padding: 50%;
+    top: -10vh;
+    margin-top: 5vh; 
+}
+
+
+
+}
+
+

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbearia Web</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="icon" href="/img/logoBarber.png" type="image/x-icon">
+    <link rel="stylesheet" href="Style.css">
+    <style>
+        /* Adicione estilos adicionais se necessário */
+        .modal {
+            z-index: 1050; /* Garante que o modal fique acima do banner */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="cabeçalho">
+        <p class="txtCabeçalho">Ligue pra nós: +55 (99) 9 9999-9999</p>
+        <div class="cabeçalhoMidias">
+            <img src="/img/instagram.svg" alt="instagram" class="iconeInstagram">
+            <img src="/img/facebook.svg" alt="facebook" class="iconeFacebook">
+            <img src="/img/whatsapp.png" alt="whatsapp" class="iconeWhatsapp">
+        </div>
+    </div>
+
+    <div class="navegaçao">
+        <a href="/inicio/index.html" class="inicio">INÍCIO</a>
+        <a href="/Agendamento/index.html" class="agendar" >AGENDAR</a>
+        <a href="/Produtos/index.html" class="produtos" onclick="recarregarPagina()">PRODUTOS</a>
+        <a href="/QuemSomos/index.html" class="serviços">QUEM SOMOS</a>
+        <a href="/Localização/index.html" class="localizacao">LOCALIZAÇÃO</a>
+    </div>
+
+    <main>
+        <h2 id="TituloProdutos">Produtos</h2>
+        <div class="container-cards">
+            <!-- Exemplo de card, adicione outros cards abaixo conforme a necessidade -->
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="/img/MINOXIDIL-PRIME-600x600.png" alt="Imagem de capa do card">
+                <div class="card-body">
+                    <h5 class="card-title">MINOXIDIL</h5>
+                    <p class="card-text">Minoxidil é um fármaco capaz de reduzir a pressão arterial por promover vasodilatação potente e de longa duração.</p>
+                    <p class="card-text">R$: 40,00</p>
+                    <div class="botões">
+                        <a href="#" class="btn btn-primary">Comprar</a>
+                        <a href="#" class="btn btn-outline-secondary"><img src="/img/AdicionarCarrinho.jpg" alt="AdicionarCarrinho" width="30vh"></a>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="card" style="width: 18rem;">
+              <img class="card-img-top" src="/img/Maquina de corte.png" alt="Imagem de capa do card">
+              <div class="card-body">
+                <h5 class="card-title">MAQUINA DE BARBEA </h5>
+                <p class="card-text">Maquina de barbear é um instrumento utilizado para remover os pelos faciais, protegendo a pele ao mesmo tempo.</p>
+                <p class="card-text">R$: 100,00</P> <br><br>
+                <a href="#" class="btn btn-primary">Comprar</a>
+                <a href="#" class="btn btn-outline-secondary"><img src="/img/AdicionarCarrinho.jpg" alt="AdicionarCarrinho"
+                    width="30vh"></a>
+              </div>
+            </div>
+        
+            <div class="card" style="width: 18em;">
+              <img class="card-img-top" src="/img/pente.png" alt="Imagem de capa do card">
+              <div class="card-body">
+                <h5 class="card-title">PENTE</h5>
+                <p class="card-text">Instrumento dentado com que se alisam ou seguram os cabelos</p>
+                <p class="card-text">R$: 20,00</p><br>
+                <a href="#" class="btn btn-primary">Comprar</a>
+                <a href="#" class="btn btn-outline-secondary"><img src="/img/AdicionarCarrinho.jpg" alt="AdicionarCarrinho"
+                    width="30vh"></a>
+              </div>
+            </div>
+        
+            <div class="card" style="width: 18rem;">
+              <img class="card-img-top" src="/img/kit maquina.png" alt="Imagem de capa do card">
+              <div class="card-body">
+                <h5 class="card-title">KIT MAQUINA</h5>
+                <p class="card-text">É um kit com diversos tipo de maquinas de corte</p>
+                <p class="card-text">R$: 380,00</p> <br>
+                <a href="#" class="btn btn-primary">Comprar</a>
+                <a href="#" class="btn btn-outline-secondary"><img src="/img/AdicionarCarrinho.jpg" alt="AdicionarCarrinho"
+                    width="30vh"></a>
+              </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+              <img class="card-img-top" src="/img/Maquina de corte.png" alt="Imagem de capa do card">
+              <div class="card-body">
+                <h5 class="card-title">KIT BARBA </h5>
+                <p class="card-text">É um kit com diversas maquinas de barbear</p>
+                <p class="card-text">R$: 910,00</p> <br>
+                <a href="#" class="btn btn-primary">Comprar</a>
+                <a href="#" class="btn btn-outline-secondary"><img src="/img/AdicionarCarrinho.jpg" alt="AdicionarCarrinho"
+                    width="30vh"></a>
+              </div>
+            </div>
+        
+            <div class="card" style="width: 18rem;">
+              <img class="card-img-top" src="/img/Navalha.png" alt="Imagem de capa do card">
+              <div class="card-body">
+                <h5 class="card-title">Navalha </h5>
+                <p class="card-text">Instrumento cortante, de lâmina de aço afiada e cabo que protege o fio da lâmina, quando fechado. </p>
+                <p class="card-text"> R$: 30,00</p>
+                <a href="#" class="btn btn-primary">Comprar</a>
+                <a href="#" class="btn btn-outline-secondary"><img src="/img/AdicionarCarrinho.jpg" alt="AdicionarCarrinho"
+                    width="30vh"></a>
+              </div>
+            </div>
+        
+            <div class="card" style="width: 18rem;">
+              <img class="card-img-top" src="/img/Loção para cabelo.png" alt="Imagem de capa do card">
+              <div class="card-body">
+                <h5 class="card-title">Loção para cabelo</h5>
+                <p class="card-text"> Uma loção feita para ser utilizada no cabelo </p>
+                <p class="card-text">R$: 35,00</p> <br><br><br>
+                <a href="#" class="btn btn-primary">Comprar</a>
+                <a href="#" class="btn btn-outline-secondary"><img src="/img/AdicionarCarrinho.jpg" alt="AdicionarCarrinho"
+                    width="30vh"></a>
+              </div>
+            </div>
+        
+            <div class="card" style="width: 18rem;">
+              <img class="card-img-top" src="/img/Gel.png" alt="Imagem de capa do card">
+              <div class="card-body">
+                <h5 class="card-title">Gel de cabelo</h5>
+                <p class="card-text">Um produto de penteado usado para endurecer o cabelo em um penteado específico
+                </p>
+                <p class="card-text">R$: 20,00</p> <br><br>
+                <a href="#" class="btn btn-primary">Comprar</a>
+                <a href="#" class="btn btn-outline-secondary"><img src="/img/AdicionarCarrinho.jpg" alt="AdicionarCarrinho"
+                    width="30vh"></a>
+              </div>
+            </div>
+        
+            <div class="card" style="width: 18rem;">
+              <img class="card-img-top" src="/img/Maquina de corte.png" alt="Imagem de capa do card">
+              <div class="card-body">
+                <h5 class="card-title">Maquina de corte</h5>
+                <p class="card-text"> Maquina feita para fazer diversos cortes de cabelo
+                </p>
+                <p class="card-text">R$: 45,00</p>
+                <a href="#" class="btn btn-primary">Comprar</a>
+                <a href="#" class="btn btn-outline-secondary"><img src="/img/AdicionarCarrinho.jpg" alt="AdicionarCarrinho"
+                    width="30vh"></a>
+              </div>
+            </div>
+        
+            <div class="card" style="width: 18rem;">
+              <img class="card-img-top" src="/img/Secador.png" alt="Imagem de capa do card">
+              <div class="card-body">
+                <h5 class="card-title">Secador</h5>
+                <p class="card-text">Dispositivo que sopra ar ambiente ou quente sobre o cabelo úmido para evaporar a água mais rapidamente para secar o cabelo.</p>
+                <p class="card-text">R$: 100,00</p>
+                <a href="#" class="btn btn-primary">Comprar</a>
+                <a href="#" class="btn btn-outline-secondary"><img src="/img/AdicionarCarrinho.jpg" alt="AdicionarCarrinho"
+                    width="30vh"></a>
+              </div>
+            </div>
+        
+            <div class="card" style="width: 18rem;">
+              <img class="card-img-top" src="/img/Cremedecabelo.png" alt="Imagem de capa do card">
+              <div class="card-body">
+                <h5 class="card-title">Creme de cabelo </h5>
+                <p class="card-text">É um produto utilizado ao barbear-se</p>
+                <p class="card-text">R$: 180,00</p>
+                <a href="#" class="btn btn-primary">Comprar</a>
+                <a href="#" class="btn btn-outline-secondary"><img src="/img/AdicionarCarrinho.jpg" alt="AdicionarCarrinho"
+                    width="30vh"></a>
+              </div>
+            </div>
+        
+            <div class="card" style="width: 18rem;">
+              <img class="card-img-top" src="/img/Tesoura.png" alt="Imagem de capa do card">
+              <div class="card-body">
+                <h5 class="card-title">Tesoura</h5>
+                <p class="card-text"> Uma tesoura que têm a função de fazer com que os cortes retos e simétricos, sejam preciso.</p>
+                <p class="card-text">R$: 20,00</p>
+                <a href="#" class="btn btn-primary">Comprar</a>
+                <a href="#" class="btn btn-outline-secondary"><img src="/img/AdicionarCarrinho.jpg" alt="AdicionarCarrinho"
+                    width="25vh"></a>
+              </div>
+            </div>
+        
+            <div class="card" style="width: 18rem;">
+              <img class="card-img-top" src="/img/Borrifador.png" alt="Imagem de capa do card">
+              <div class="card-body">
+                <h5 class="card-title">Borrifador</h5>
+                <p class="card-text">Instumento que permite uma aplicação uniforme e controlada do líquido de limpeza, facilitando a remoção da sujeira e proporcionando um resultado eficiente..
+                </p>
+                <p class="card-text">R$: 10,00</p>
+                <a href="#" class="btn btn-primary">Comprar</a>
+                <a href="#" class="btn btn-outline-secondary"><img src="/img/AdicionarCarrinho.jpg" alt="AdicionarCarrinho"
+                    width="30vh"></a>
+              </div>
+            </div>
+        
+            <div class="card" style="width: 18rem;">
+              <img class="card-img-top" src="/img/Espuma.png" alt="Imagem de capa do card">
+              <div class="card-body">
+                <h5 class="card-title">Espuma</h5>
+                <p class="card-text"> É um produto utilizado ao barbear-se.</p>
+                <p class="card-text">R$: 15,00</p>
+                <a href="#" class="btn btn-primary">Comprar</a>
+                <a href="#" class="btn btn-outline-secondary"><img src="/img/AdicionarCarrinho.jpg" alt="AdicionarCarrinho"
+                    width="30vh"></a>
+              </div>
+            </div>      
+            </div>
+          </main>
+        
+    </body>
+</html>
