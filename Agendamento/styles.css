@@ -185,7 +185,7 @@ body {
     font-weight: bold;
 }
 
-#timeSlots, #appointmentModal, #confirmationModal, #deleteConfirmationModal {
+#appointmentModal, #confirmationModal, #deleteConfirmationModal {
     display: none;
     position: fixed;
     top: 50%;
@@ -200,13 +200,28 @@ body {
     z-index: 10;
 }
 
+#timeSlots{
+    width: 400px; /* Largura desejada */
+    max-height: 500px; /* Altura máxima para o modal */
+    overflow-y: auto; /* Permite rolagem vertical */
+    background-color: white; /* Cor de fundo */
+    border-radius: 8px; /* Bordas arredondadas */
+    padding: 20px; /* Espaçamento interno */
+    position: fixed; /* Fica fixo no centro */
+    top: 50%; /* Centraliza verticalmente */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translate(-50%, -50%); /* Ajuste para centralização */
+    z-index: 1000; /* Fica acima dos outros elementos */
+    display: none; /* Inicialmente oculto */
+    overflow-x: hidden;
+}
+
 #appointmentModal {
     height: 50vh;
 }
 
 #titulohorarios {
-    left: 12vh;
-    position: relative;
+    text-align: center;
 }
 
 #slotsList {

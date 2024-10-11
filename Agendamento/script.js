@@ -92,20 +92,18 @@ document.addEventListener('DOMContentLoaded', () => {
         const dateStr = `${currentDate.getFullYear()}-${(currentDate.getMonth() + 1).toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`;
         slotsList.innerHTML = '';
 
-        let startHour = 8;
-        let startMinute = 0;
-
         const dateBookings = bookedDates[dateStr] || {};
 
-        while (startHour < 18) {
-            const slot = `${startHour.toString().padStart(2, '0')}:${startMinute.toString().padStart(2, '0')}`;
+        // Definindo horários fixos de 8h até 15h
+        for (let hour = 8; hour <= 15; hour++) {
+            const slot = `${hour.toString().padStart(2, '0')}:00`;
             const slotItem = document.createElement('li');
             const isBooked = dateBookings[slot] !== undefined;
 
             if (isBooked) {
                 slotItem.innerHTML = `${slot}: <span class="booked-label">OCUPADO</span>`;
                 slotItem.classList.add('booked');
-            } else if (isToday && (startHour < today.getHours() || (startHour === today.getHours() && startMinute < today.getMinutes()))) {
+            } else if (isToday && (hour < today.getHours())) {
                 slotItem.innerHTML = `${slot}: <span class="disabled-label">NÃO DISPONÍVEL</span>`;
                 slotItem.classList.add('disabled');
             } else {
@@ -119,12 +117,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             slotsList.appendChild(slotItem);
-
-            startMinute += 30; // Correção: ajustar o incremento para 30 minutos para refletir os slots corretos
-            if (startMinute >= 60) {
-                startHour += 1;
-                startMinute -= 60;
-            }
         }
 
         timeSlots.style.display = 'block';

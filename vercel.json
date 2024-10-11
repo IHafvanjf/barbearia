@@ -1,0 +1,20 @@
+{
+    "headers": [
+      {
+        "source": "/(.*)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "no-store"
+          }
+        ]
+      }
+    ],
+    "rewrites": [
+      { "source": "/inicio/(.*)", "destination": "/inicio/$1" },
+      { "source": "/Localização/(.*)", "destination": "/Localização/$1" },
+      { "source": "/Produtos/(.*)", "destination": "/Produtos/$1" },
+      { "source": "/QuemSomos/(.*)", "destination": "/QuemSomos/$1" }
+    ]
+  }
+  

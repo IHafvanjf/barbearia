@@ -291,6 +291,12 @@ img {
     .image-container img{
         margin-top: 5vh;        
     }
+
+    .col{
+        display: flex;
+        justify-content: center;
+        margin-right: 25vh;
+    }
 }
 
 @media (max-width: 590px) {

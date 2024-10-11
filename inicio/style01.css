@@ -3,7 +3,7 @@ body {
     background-color: rgb(52, 52, 52);
     overflow-x: hidden;
 }
-
+   
 .cabeçalho {
     background-color: rgb(161, 39, 65);
     position: absolute;
@@ -14,13 +14,6 @@ body {
     justify-content: space-between;
     padding: 0 2%;
     top: 0;
-}
-
-#fundoAgenda {
-    width: 100%;
-    z-index: -1;
-    position: absolute;
-    height: 100%;
 }
 
 .cabeçalhoMidias {
